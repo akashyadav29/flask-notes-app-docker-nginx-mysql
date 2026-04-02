@@ -39,12 +39,13 @@ notes-app/
 │   ├── app.py
 │   ├── requirements.txt
 │   └── templates/
+│        └── index.html
 │
 ├── nginx/
 │   └── default.conf
 │
-├── Dockerfile
-├── docker-compose.yml
+├── dockerfile
+├── compose.yml
 └── .env
 ```
 
@@ -67,7 +68,7 @@ notes-app/
 ### 1️⃣ Clone the repo
 
 ```
-git clone https://github.com/<your-username>/flask-notes-app-docker-nginx-mysql.git
+git clone https://github.com/akashyadav29/flask-notes-app-docker-nginx-mysql.git
 cd flask-notes-app-docker-nginx-mysql
 ```
 
@@ -90,7 +91,7 @@ http://<EC2-PUBLIC-IP>
 Enter MySQL container:
 
 ```
-docker exec -it mysql mysql -uroot -p
+docker exec -it notes-app-mysql-1 mysql -uroot -ppassword
 ```
 
 Run:
