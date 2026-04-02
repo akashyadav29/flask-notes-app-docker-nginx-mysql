@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+<title>Akash Notes</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#f1f3f4;
+}
+
+.container{
+width:80%;
+margin:auto;
+}
+
+.note-form{
+margin-bottom:20px;
+}
+
+.notes{
+display:flex;
+flex-wrap:wrap;
+gap:15px;
+}
+
+.note{
+width:200px;
+padding:15px;
+border-radius:8px;
+box-shadow:0 2px 5px rgba(0,0,0,0.2);
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<h2>Akash Notes</h2>
+
+<form class="note-form" action="/add" method="post">
+
+<input type="text" name="note" placeholder="Write note">
+
+<select name="color">
+
+<option value="#fff475">Yellow</option>
+<option value="#ccff90">Green</option>
+<option value="#a7ffeb">Blue</option>
+<option value="#f28b82">Red</option>
+
+</select>
+
+<button>Add</button>
+
+</form>
+
+<div class="notes">
+
+{% for note in notes %}
+
+<div class="note" style="background:{{note[2]}}">
+
+<p>{{note[1]}}</p>
+
+<a href="/delete/{{ note[0] }}">Delete</a>
+
+</div>
+
+{% endfor %}
+
+</div>
+
+</div>
+
+</body>
+</html>
